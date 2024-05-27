@@ -1,11 +1,16 @@
 function! CheckAndCallPlugStatus()
   let l:status_file = expand('~/.vim/vim-plug-status.txt')
-  let l:one_week = 7 * 24 * 60 * 60
   let l:current_time = localtime()
+
+  if exists('g:vim_plug_periodic_status_interval_seconds')
+    let l:check_interval = g:vim_plug_periodic_status_interval_seconds
+  else
+    let l:check_interval = 7 * 24 * 60 * 60
+  endif
 
   if filereadable(l:status_file)
     let l:last_checked_time = getftime(l:status_file)
-    if l:last_checked_time + l:one_week > l:current_time
+    if l:last_checked_time + l:check_interval > l:current_time
       return
     endif
   endif
