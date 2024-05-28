@@ -22,3 +22,5 @@ function! CheckAndCallPlugStatus()
     echo "Where is vim-plug???"
   endif
 endfunction
+
+autocmd VimEnter * call CheckAndCallPlugStatus()

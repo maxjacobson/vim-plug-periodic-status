@@ -4,9 +4,13 @@ A vim plugin for [vim-plug](https://github.com/junegunn/vim-plug) users which pe
 
 ## Usage
 
+Install the plugin using vim-plug:
+
 ```vim
-autocmd VimEnter * call CheckAndCallPlugStatus()
+Plug 'maxjacobson/vim-plug-periodic-status'
 ```
+
+It will automatically do the rest.
 
 ## Configuration
 
